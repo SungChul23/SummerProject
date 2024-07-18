@@ -1,7 +1,6 @@
-//cors 설정
-
 package nsu_bookexchage.Summer_Project;
 
+import nsu_bookexchage.Summer_Project.JWT.JWTFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -11,25 +10,30 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-@Configuration
-@EnableWebSecurity
+@Configuration // 스프링 설정 클래스
+@EnableWebSecurity  // Spring Security를 활성화하는 어노테이션
 public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors().configurationSource(corsConfigurationSource()).and() // CORS 설정 적용
+                .cors(cors -> cors.configurationSource(corsConfigurationSource())) // CORS 설정 적용
                 .csrf().disable() // CSRF 보안 비활성화
                 .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll() // OPTIONS 메서드는 모든 경로에서 허용
-                        .requestMatchers("/api/**").permitAll() // "/api/**" 경로는 모든 요청 허용
-                        .anyRequest().authenticated() // 나머지 요청은 인증이 필요
-                );
+                        .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
+                        .requestMatchers("/login", "/register").permitAll() // 로그인 및 회원가입은 토큰 없이 요청 가능
+                        .requestMatchers("/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .addFilterBefore(new JWTFilter(), UsernamePasswordAuthenticationFilter.class); // JWT 필터 추가
+
         return http.build();
     }
 
-    CorsConfigurationSource corsConfigurationSource() {
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.addAllowedOrigin("http://localhost:3000"); // 허용할 오리진(도메인) 설정
         configuration.addAllowedMethod("*"); // 모든 HTTP 메서드 허용

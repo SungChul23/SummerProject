@@ -9,6 +9,7 @@ public class UserDto {
     private String username;
     private String password;
 
+
     public String getNickname() {
         return nickname;
     }
@@ -40,4 +41,5 @@ public class UserDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

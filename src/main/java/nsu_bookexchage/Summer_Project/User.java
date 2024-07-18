@@ -19,23 +19,27 @@ public class User {
     private String userId;
     @Column(nullable = false, unique = true) // 널값 허용 X 및 유일성
     private String username; //실명
-
     @Column(nullable = false) // 널값 허용 x
     private String password; // 비번
+
+    @Column(nullable = false) // 널값 허용 x
+    private String role; // 역할
+
 
 
 /////////////////////////////
 
     public User(){}
-    public User(String nickname, String userId, String username, String password)
+    public User(String nickname, String userId, String username, String password,String role)
     {
         this.nickname = nickname;
         this.userId = userId;
         this.username = username;
         this.password = password;
+        this.role=role;
     }
 
-
+    // Getter 및 Setter
     public Long getId() {
         return id;
     }
@@ -74,6 +78,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
 

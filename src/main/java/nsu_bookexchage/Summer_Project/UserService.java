@@ -1,5 +1,5 @@
 //비즈니스 로직 구현 + DB와의 상호작용
-package nsu_bookexchage.Summer_Project;
+        package nsu_bookexchage.Summer_Project;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,6 +24,8 @@ public class UserService {
         user.setUserId(userDto.getUserId());
         user.setUsername(userDto.getUsername());
         user.setPassword(encryptedPassword);
+        user.setRole("user");
+
 
         userRepository.save(user);
     }
