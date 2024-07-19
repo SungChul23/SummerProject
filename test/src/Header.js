@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faUser, faTimes } from "@fortawesome/free-solid-svg-icons";
+//로그인 라우팅
+import {Link} from "react-router-dom";
 
 
 //css 부분
@@ -62,6 +64,8 @@ const Header = styled.div`
 
     .header__right {
       display: ${(props) => (props.userToggled ? "flex" : "none")};
+      justify-content: center;
+      align-items: center;
       flex-direction: column;
       width: 100%;
       background-color: white;
@@ -130,7 +134,9 @@ function Head() {
   
         {/* User 메뉴 리스트 */}
         <ul className="header__right">
-          <li>로그인</li>
+          <li>
+            <Link to="/Login">로그인</Link>
+          </li>
           <li>마이 페이지</li>
         </ul>
       </Header>

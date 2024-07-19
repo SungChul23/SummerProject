@@ -1,13 +1,17 @@
 import React from 'react';
 import './App.css';
-import Header from './Header'; // Header 컴포넌트를 import하세요
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Routes instead of Switch
+import Head from './Header'; // Header 컴포넌트를 import하세요
+import Login from './Login'; //로그인.js 임포트
 
 function App() {
   return (
-    <div className="App">
-      <Header /> {/* Header 컴포넌트를 사용하세요 */}
-      {/* 나머지 코드 */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' exact Component={Head}/>
+        <Route path="/login" Component={Login}/>
+      </Routes>
+    </Router>
   );
 }
 
