@@ -20,7 +20,7 @@ public class WebSecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // CORS 설정 적용
-                .csrf().disable() // CSRF 보안 비활성화
+                .csrf(csrf -> csrf.disable()) // CSRF 보안 비활성화
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/login", "/register").permitAll() // 로그인 및 회원가입은 토큰 없이 요청 가능
