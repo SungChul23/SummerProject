@@ -1,12 +1,23 @@
-import React from 'react';
-import './App.css';
-import Header from './Header'; // Header 컴포넌트를 import하세요
-
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import "./App.css";
+import Layout from "./layout";
+import Board from "./board";
 function App() {
   return (
-    <div className="App">
-      <Header /> {/* Header 컴포넌트를 사용하세요 */}
-      {/* 나머지 코드 */}
+    <div className="wrapper">
+      <div className="contentWrapper">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                <Board />
+              </Layout>
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
