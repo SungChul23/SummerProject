@@ -12,13 +12,27 @@ function App() {
       <div className="contentWrapper">
         {/* Remove this nested Router */}
         <Routes>
-          <Route path='/' exact Component={Header}/>
-          <Route path="/login" Component={Login}/>
-          <Route path="/" element={ <Layout> <Board /> </Layout>}/>
+          <Route
+            path="/"
+            element={
+              <Layout>
+                {" "}
+                <Board />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="/login"
+            Component={
+              <Layout>
+                <Header />
+                <Login />
+              </Layout>
+            }
+          />
         </Routes>
       </div>
     </div>
   );
 }
-
 export default App;

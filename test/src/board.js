@@ -2,20 +2,20 @@ import "../src/board.css";
 const data = [
   {
     id: 1,
-    title: "작성자가 쓴 제목 1",
-    price: "999",
+    title: "소프트웨어공학 판매",
+    price: Number("12000").toLocaleString(),
     imageUrl: "image1.jpg", // 이미지 URL
   },
   {
     id: 2,
     title: "작성자가 쓴 제목 2",
-    price: "999",
+    price: Number("15320").toLocaleString(),
     imageUrl: "image2.jpg",
   },
   {
     id: 3,
     title: "작성자가 쓴 제목 3",
-    price: "999",
+    price: Number("8000").toLocaleString(),
     imageUrl: "image3.jpg",
   },
   // 추가 데이터 넣기

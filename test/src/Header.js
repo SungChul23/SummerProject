@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faUser, faTimes } from "@fortawesome/free-solid-svg-icons";
+//로그인 라우팅
 import { Link } from "react-router-dom";
 
 //css 부분
