@@ -62,8 +62,6 @@ const Header = styled.div`
 
     .header__right {
       display: ${(props) => (props.userToggled ? "flex" : "none")};
-      justify-content: center;
-      align-items: center;
       flex-direction: column;
       width: 100%;
       background-color: white;

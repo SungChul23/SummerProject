@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "react-router-dom": "^6.25.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.24.8"
   }
 }

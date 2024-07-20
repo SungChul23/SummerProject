@@ -1,18 +1,32 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./Header";
+import Login from "./Login";
 import Layout from "./layout";
 import Board from "./board";
+
 function App() {
   return (
     <div className="wrapper">
       <div className="contentWrapper">
+        {/* Remove this nested Router */}
         <Routes>
           <Route
             path="/"
             element={
               <Layout>
-                <Board />
+                {" "}
+                <Board />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="/login"
+            Component={
+              <Layout>
+                <Header />
+                <Login />
               </Layout>
             }
           />
