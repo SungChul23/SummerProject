@@ -1,17 +1,23 @@
-import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Routes instead of Switch
-import Head from './Header'; // Header 컴포넌트를 import하세요
-import Login from './Login'; //로그인.js 임포트
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css";
+import Header from "./Header";
+import Login from "./Login";
+import Layout from "./layout";
+import Board from "./board";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' exact Component={Head}/>
-        <Route path="/login" Component={Login}/>
-      </Routes>
-    </Router>
+    <div className="wrapper">
+      <div className="contentWrapper">
+        {/* Remove this nested Router */}
+        <Routes>
+          <Route path='/' exact Component={Header}/>
+          <Route path="/login" Component={Login}/>
+          <Route path="/" element={ <Layout> <Board /> </Layout>}/>
+        </Routes>
+      </div>
+    </div>
   );
 }
 
