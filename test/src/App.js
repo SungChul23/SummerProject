@@ -25,7 +25,6 @@ function App() {
             path="/login"
             element={
               <Layout>
-                <Header />
                 <Login />
               </Layout>
             }
