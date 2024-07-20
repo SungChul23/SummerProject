@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-regular-svg-icons";
 import { faBars, faUser, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 //css 부분
 const Header = styled.div`
@@ -20,13 +21,14 @@ const Header = styled.div`
   }
 
   .header__menulist {
+    justify-content: flex-start;
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
   }
 
   .header__left {
+    list-style: none;
     display: flex;
   }
 
@@ -105,7 +107,7 @@ function Head() {
         <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
       </div>
 
-      {/* Apple 로고 */}
+      {/* 사이트 로고 */}
       <div className="logo">
         <FontAwesomeIcon icon={faStar} />
       </div>
@@ -123,13 +125,16 @@ function Head() {
       {/* 메뉴 리스트 */}
       <ul className="header__menulist">
         <li>게시판</li>
-
         <li>책정보</li>
       </ul>
 
       {/* User 메뉴 리스트 */}
       <ul className="header__right">
-        <li>로그인</li>
+        <li>
+          <Link to="/login" style={{ color: "black" }}>
+            로그인
+          </Link>
+        </li>
         <li>마이 페이지</li>
       </ul>
     </Header>
