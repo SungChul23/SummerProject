@@ -23,7 +23,7 @@ function App() {
           />
           <Route
             path="/login"
-            Component={
+            element={
               <Layout>
                 <Header />
                 <Login />
