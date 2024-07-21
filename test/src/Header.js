@@ -22,13 +22,14 @@ const Header = styled.div`
   }
 
   .header__menulist {
+    justify-content: flex-start;
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items: left;
   }
 
   .header__left {
+    list-style: none;
     display: flex;
   }
 
@@ -107,7 +108,7 @@ function Head() {
         <FontAwesomeIcon icon={!isToggled ? faBars : faTimes} />
       </div>
 
-      {/* Apple 로고 */}
+      {/* 사이트 로고 */}
       <div className="logo">
         <FontAwesomeIcon icon={faStar} />
       </div>
@@ -124,19 +125,27 @@ function Head() {
 
       {/* 메뉴 리스트 */}
       <ul className="header__menulist">
+<<<<<<< HEAD
         <li>
           <Link to="/" style={{ textDecoration: "none", color: "black" }}>
             게시판
           </Link>
         </li>
 
+=======
+        <li>게시판</li>
+>>>>>>> f87c527e1b068160ec9797682932b8ca87a440e8
         <li>책정보</li>
       </ul>
 
       {/* User 메뉴 리스트 */}
       <ul className="header__right">
         <li>
+<<<<<<< HEAD
           <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+=======
+          <Link to="/login" style={{ color: "black" }}>
+>>>>>>> f87c527e1b068160ec9797682932b8ca87a440e8
             로그인
           </Link>
         </li>

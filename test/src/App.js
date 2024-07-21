@@ -5,7 +5,11 @@ import "./App.css";
 import Login from "./Login";
 import Layout from "./layout";
 import Board from "./board";
+<<<<<<< HEAD
 import Write from "./write";
+=======
+import Signin from "./Signin";
+>>>>>>> f87c527e1b068160ec9797682932b8ca87a440e8
 
 function App() {
   return (
@@ -23,6 +27,7 @@ function App() {
             }
           />
           <Route
+<<<<<<< HEAD
             path="/write"
             element={
               <Layout>
@@ -33,12 +38,21 @@ function App() {
           />
           <Route
             path="/Login"
+=======
+            path="/login"
+>>>>>>> f87c527e1b068160ec9797682932b8ca87a440e8
             element={
               <Layout>
                 <Login />
               </Layout>
             }
           />
+          <Route 
+            path="/signin" 
+            element={
+              <Layout>
+                <Signin />
+              </Layout>}/>
         </Routes>
       </div>
     </div>
