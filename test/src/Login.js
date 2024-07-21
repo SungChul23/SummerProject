@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -44,9 +45,11 @@ function Login() {
             <button type='button' className='btnLogin'>
                 로그인
             </button>
-            <button type='button' className='btnSign'>
+            <Link to="/Signin">
+            <button type='button' className='btnSign'>                
                 회원가입
             </button>
+            </Link>
         </div>        
     </div>
   );

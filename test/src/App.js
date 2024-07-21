@@ -5,6 +5,7 @@ import Header from "./Header";
 import Login from "./Login";
 import Layout from "./layout";
 import Board from "./board";
+import Signin from "./Signin";
 
 function App() {
   return (
@@ -29,6 +30,12 @@ function App() {
               </Layout>
             }
           />
+          <Route 
+            path="/signin" 
+            element={
+              <Layout>
+                <Signin />
+              </Layout>}/>
         </Routes>
       </div>
     </div>
