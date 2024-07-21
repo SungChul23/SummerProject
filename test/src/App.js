@@ -1,10 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./Header";
+
 import Login from "./Login";
 import Layout from "./layout";
 import Board from "./board";
+import Write from "./write";
 
 function App() {
   return (
@@ -22,10 +23,18 @@ function App() {
             }
           />
           <Route
-            path="/login"
-            Component={
+            path="/write"
+            element={
               <Layout>
-                <Header />
+                {" "}
+                <Write />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="/Login"
+            element={
+              <Layout>
                 <Login />
               </Layout>
             }

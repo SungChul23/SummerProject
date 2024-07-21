@@ -124,14 +124,22 @@ function Head() {
 
       {/* 메뉴 리스트 */}
       <ul className="header__menulist">
-        <li>게시판</li>
+        <li>
+          <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            게시판
+          </Link>
+        </li>
 
         <li>책정보</li>
       </ul>
 
       {/* User 메뉴 리스트 */}
       <ul className="header__right">
-        <li>로그인</li>
+        <li>
+          <Link to="/login" style={{ textDecoration: "none", color: "black" }}>
+            로그인
+          </Link>
+        </li>
         <li>마이 페이지</li>
       </ul>
     </Header>

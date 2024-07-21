@@ -1,4 +1,5 @@
 import "../src/board.css";
+import { Link } from "react-router-dom";
 const data = [
   {
     id: 1,
@@ -38,7 +39,9 @@ const Board = () => {
     <div className="post-board">
       <div className="top">
         <h2>게시판</h2>
-        <input className="button" type="button" value="작성하기"></input>
+        <Link to="/write">
+          <input className="button" type="button" value="작성하기"></input>
+        </Link>
       </div>
       <div className="line"></div>
       <div className="post-board-bottom">
