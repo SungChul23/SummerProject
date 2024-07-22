@@ -1,3 +1,17 @@
-.div{
-    color: black;
+.signin_page {
+    position :  relative;
+    top:0;
+    bottom : 0;
+    width: 100% ;
+    max-width : 500px;
+    padding: 100px 20px;
+
+
+    left:50%;
+    transform : translate(-50%,0);
+
+    overflow : hidden;
+
+    display: flex;
+    flex-direction: column;
 }

@@ -37,7 +37,8 @@ function App() {
             path="/login"
             element={
               <Layout>
-                <Login />
+                {" "}
+                <Login />{" "}
               </Layout>
             }
           />
@@ -45,7 +46,8 @@ function App() {
             path="/signin"
             element={
               <Layout>
-                <Signin />
+                {" "}
+                <Signin />{" "}
               </Layout>
             }
           />

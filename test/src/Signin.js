@@ -28,7 +28,7 @@ function Signin(){
 
     return (
         
-        <div className = "page">
+        <div className = "signin_page">
             {/* Title Wrap*/}
             <div className = "titleWrap">
                 회원가입
@@ -77,7 +77,7 @@ function Signin(){
                     비밀번호
                 </div>
                 <div className="inputWrap">
-                    <input></input>
+                    <input type="password"></input>
                 </div>
             </div>
 
@@ -86,7 +86,7 @@ function Signin(){
                     비밀번호 확인
                 </div>
                 <div className="inputWrap">
-                    <input></input>
+                    <input type="password"></input>
                 </div>
             </div>
     

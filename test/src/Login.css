@@ -1,10 +1,10 @@
-.page {
-    position : absolute ;
+.login_page {
+    position :  relative;
     top:0;
     bottom : 0;
     width: 100% ;
     max-width : 500px;
-    padding: 220px 20px;
+    padding: 150px 20px;
 
 
     left:50%;
@@ -73,6 +73,10 @@
 
 }
 
+.showHidePasswordButton{
+    margin-left: 10px;
+}
+
 .checkbutton{
     text-align: center;
     margin-top: 80px;
@@ -93,6 +97,7 @@
     transition: 0.25s;
     background-color: aliceblue;
     color: #1e6b7b;
+    cursor: pointer;
 }
 
 .btnSign{
@@ -113,6 +118,7 @@
 
     background-color: aliceblue;
     color: #1e6b7b;
+    cursor: pointer;
 }
 
 .bottomButton{
