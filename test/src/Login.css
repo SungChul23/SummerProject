@@ -1,10 +1,10 @@
 .login_page {
-    position :  relative;
+    position : relative;
     top:0;
     bottom : 0;
     width: 100% ;
     max-width : 500px;
-    padding: 150px 20px;
+    padding: 130px 20px;
 
 
     left:50%;
@@ -66,7 +66,7 @@
     color : #dadada;
 }
 
-.errorMessageWrap{
+.errorText{
     margin-top: 8px;
     color:#ef0000;
     font-size: 12px;
@@ -75,6 +75,23 @@
 
 .showHidePasswordButton{
     margin-left: 10px;
+}
+
+.shpb{
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: aliceblue;
+    color: #1e6b7b;
 }
 
 .checkbutton{
