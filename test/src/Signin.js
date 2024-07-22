@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './Signin.css';
+import { Link } from "react-router-dom";
 
 function Signin(){
     const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ function Signin(){
       return;
     }
 
-    // Send verification code logic (e.g., API call or other actions)
+    // 코드 로직 전송 (e.g., API call or other actions)
     // Implement your code to send the verification code here
     // ...
 
@@ -37,26 +38,26 @@ function Signin(){
             {/* contentWrap - 이메일 입력 */}
             <div className = "contentWrap">
                 <div className="inputTitle">
-                    대학교 이메일
+                    학교 이메일
                 </div>
                 <div className="inputWrap">
                     <input type="email" value={email} onChange={handleEmailChange}/>
                     
-                    <div className="contentWrap">
-                        <button onClick={handleSendCode}>인증 코드 발송</button>
+                    <div className="codebutton">
+                        <button onClick={handleSendCode} className="codesendbutton">인증 코드 발송</button>
                     </div>
                 </div>
             </div>
     
             {/* errror 메세지 띄우기  */}
-            <div className = "errorMessageWrap">
+            <div className = "errorText">
                 <div>올바른 이메일 주소를 입력해주세요</div>
     
             </div>
             
             <div className = "contentWrap">
                 <div className="inputTitle">
-                    성명
+                    이름
                 </div>
                 <div className="inputWrap">
                     <input></input>
@@ -69,6 +70,12 @@ function Signin(){
                 </div>
                 <div className="inputWrap">
                     <input></input>
+                    <div className="codebutton">
+                        <button onClick={handleSendCode} 
+                        className="codesendbutton">
+                            중복 확인
+                        </button>
+                    </div>
                 </div>
             </div>
             
@@ -81,6 +88,12 @@ function Signin(){
                 </div>
             </div>
 
+            {/* errror 메세지 띄우기  */}
+            <div className = "errorText">
+                <div> 영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
+    
+            </div>
+
             <div className = "contentWrap">
                 <div className="inputTitle">
                     비밀번호 확인
@@ -91,10 +104,16 @@ function Signin(){
             </div>
     
             {/* errror 메세지 띄우기  */}
-            <div className = "errorMessageWrap">
-                <div> 영문, 숫자, 특수문자 포함 8자 이상 입력해주세요</div>
+            <div className = "errorText">
+                <div> 비밀번호가 올바르지 않습니다.</div>
     
             </div>
+
+            <div className='checkbutton'>
+                <button type='button' className='lastsign'>                
+                    회원가입
+                </button>
+            </div> 
         </div>
     );
 }
