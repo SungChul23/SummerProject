@@ -3,13 +3,14 @@ import './Login.css';
 import { Link } from 'react-router-dom';
 
 function Login() {
-    const [userIdInput, setUserIdInput] = useState(' ');
-    const [userPwInput, setUserPwInput] = useState(' ');
+    const [userIdInput, setUserIdInput] = useState('');
+    const [userPwInput, setUserPwInput] = useState('');
     const [showPassword, setShowPassword] = useState(false); //비번 숨기기/보이기 상태 변수
     const [emailValid, setEmailValid] = useState(true);
 
     const handleChangeInput = (e) => {
         setUserIdInput(e.target.value);
+        setEmailValid(true); // 입력 값 변경 시 이메일 유효성 초기화
     };
 
     const handleShowPassword = () => {
@@ -30,7 +31,7 @@ function Login() {
     const handleBlur = (e) => {
         const { name, value } = e.target;
         if (name === 'userIdInput') {
-            setEmailValid(validateEmail(value)); // Check email validity
+            setEmailValid(validateEmail(value)); // 이메일 유효한지
         }
         if (name === 'userPwInput'){
             setUserPwInput(value);
@@ -74,7 +75,7 @@ function Login() {
             <div className="inputWrap">
                 <input
                     type={showPassword ? 'text' : 'password'} // 입력 타입 동적 설정
-                    name="userPw"
+                    name="userPwInput"
                     id="password"
                     placeholder="비밀번호"
                     maxLength={16}
