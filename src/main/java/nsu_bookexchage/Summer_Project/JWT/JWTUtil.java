@@ -11,35 +11,45 @@ import java.nio.charset.StandardCharsets;
 @Component
 public class JWTUtil {
     private SecretKey secretKey;
-    public JWTUtil(@Value("${spring.jwt.secret}")String secret){
 
-        secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), Jwts.SIG.HS256.key().build().getAlgorithm());
-    }
-    public String getuserId(String token) {
+    public JWTUtil(@Value("${spring.jwt.secret}") String secret) {
+        // HS256 알고리즘을 명시적으로 설정합니다.
+        secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
 
-        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("userId", String.class);
     }
 
-    public String getRole(String token) {
-
-        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().get("role", String.class);
+    public String getEmail(String token) {
+        return Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .get("email", String.class);
     }
 
     public Boolean isExpired(String token) {
-
-        return Jwts.parser().verifyWith(secretKey).build().parseSignedClaims(token).getPayload().getExpiration().before(new Date());
+        return Jwts.parser()
+                .verifyWith(secretKey)
+                .build()
+                .parseSignedClaims(token)
+                .getPayload()
+                .getExpiration()
+                .before(new Date());
     }
 
     // 토큰 생성
-    public String createJwt(String userId, String role, Long expiredMs) {
+// 토큰 생성
+    public String createJwt(String email, String username, String nickname, String role, String expiredMsString) {
+        long expiredMs = Long.parseLong(expiredMsString); // 문자열을 long으로 변환
 
         return Jwts.builder()
-                .claim("userId", userId)
+                .claim("email", email)
+                .claim("username", username)
+                .claim("nickname", nickname)
                 .claim("role", role)
-                .issuedAt(new Date(System.currentTimeMillis())) // 발행시간
-                .expiration(new Date(System.currentTimeMillis() + expiredMs)) // 소멸시간
-                .signWith(secretKey) //암호화(서명)
+                .setIssuedAt(new Date(System.currentTimeMillis())) // 발행시간
+                .setExpiration(new Date(System.currentTimeMillis() + expiredMs)) // 소멸시간
+                .signWith(secretKey) // 암호화(서명)
                 .compact();
     }
-
 }

@@ -15,6 +15,7 @@ java {
 
 repositories {
 	mavenCentral()
+	maven{url 'https://jitpack.io'} // 대학 메일 인증
 }
 
 dependencies {
@@ -25,9 +26,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 
-	implementation 'io.jsonwebtoken:jjwt-api:0.12.3'
-	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'
-	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'
+	implementation 'io.jsonwebtoken:jjwt-api:0.12.3' //jwt
+	implementation 'io.jsonwebtoken:jjwt-impl:0.12.3'//jwt
+	implementation 'io.jsonwebtoken:jjwt-jackson:0.12.3'//jwt
 
 	runtimeOnly 'com.h2database:h2'
 
@@ -37,6 +38,8 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.28' //Lombok 의존성 추가
 	annotationProcessor 'org.projectlombok:lombok:1.18.28'//Lombok 의존성 추가
 
+	implementation 'com.github.in-seo:univcert:master-SNAPSHOT' // 대학 메일
+	implementation 'org.json:json:20231013'
 
 
 

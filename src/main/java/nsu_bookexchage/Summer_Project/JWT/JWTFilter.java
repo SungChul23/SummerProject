@@ -16,21 +16,18 @@ public class JWTFilter extends OncePerRequestFilter {
     @Autowired
     private JWTUtil jwtUtil;
 
-
-
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, java.io.IOException {
 
-
         // JWT 토큰을 헤더에서 가져오기
         String authorizationHeader = request.getHeader("Authorization");
         String token = null;
-        String userId = null;
+        String email = null;
 
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
             token = authorizationHeader.substring(7); // 7번째 인덱스부터 쭉 : 헤더만 추출
-            userId = jwtUtil.getuserId(token); // 토큰에서 userId 가져오기
+            email = jwtUtil.getEmail(token); // 토큰에서 이메일 가져오기
         }
 
         // Token Expired 되었는지 여부
@@ -41,10 +38,10 @@ public class JWTFilter extends OncePerRequestFilter {
         }
 
         // 사용자 인증 처리
-        if (userId != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+        if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             // 사용자 인증 객체 생성
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                    userId, null, null);
+                    email, null, null);
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
             SecurityContextHolder.getContext().setAuthentication(authentication);
         }

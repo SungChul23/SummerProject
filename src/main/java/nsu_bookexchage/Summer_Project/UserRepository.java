@@ -6,8 +6,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> //User 엔티티와 기본 키 타입이 Long인 레포지 정의
-{
-    User findByUserId(String userId); // userId 기반으로 사용자 조회
+public interface UserRepository extends JpaRepository<User, Long> {
+    //이메일 확인 (로그인 시)
+    User findByEmail(String email);
+
+    //닉네임 중복 체크
+    boolean existsByNickname(String nickname);
 }
 

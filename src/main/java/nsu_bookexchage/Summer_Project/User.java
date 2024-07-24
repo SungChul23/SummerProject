@@ -12,11 +12,13 @@ public class User {
     @Id // 기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //자동으로 키 생성
     private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String email; // 이메일을 아이디로 사용
+
     @Column(nullable = false, unique = true)
     private String nickname; // 닉네임
 
-    @Column(nullable = false, unique = true)
-    private String userId;
     @Column(nullable = false, unique = true) // 널값 허용 X 및 유일성
     private String username; //실명
     @Column(nullable = false) // 널값 허용 x
@@ -30,10 +32,10 @@ public class User {
 /////////////////////////////
 
     public User(){}
-    public User(String nickname, String userId, String username, String password,String role)
+    public User(String email, String nickname, String username, String password,String role)
     {
+        this.email=email;
         this.nickname = nickname;
-        this.userId = userId;
         this.username = username;
         this.password = password;
         this.role=role;
@@ -44,9 +46,6 @@ public class User {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getNickname() {
         return nickname;
@@ -56,13 +55,6 @@ public class User {
         this.nickname = nickname;
     }
 
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
 
     public String getUsername() {
         return username;
@@ -86,6 +78,14 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
 
