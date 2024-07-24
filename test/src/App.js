@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+import axios from "axios";
 
 import Login from "./Login";
 import Layout from "./layout";
@@ -8,6 +9,7 @@ import Board from "./board";
 
 import Write from "./write";
 import Signin from "./Signin";
+import Mypage from "./Mypage";
 
 function App() {
   return (
@@ -48,6 +50,15 @@ function App() {
               <Layout>
                 {" "}
                 <Signin />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="/mypage"
+            element={
+              <Layout>
+                {" "}
+                <Mypage />{" "}
               </Layout>
             }
           />
