@@ -1,0 +1,53 @@
+.signin_page {
+    position :  relative;
+    top:0;
+    bottom : 0;
+    width: 100% ;
+    max-width : 500px;
+    padding: 100px 20px;
+
+
+    left:50%;
+    transform : translate(-50%,0);
+
+    overflow : hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.codesendbutton{
+    margin-left: 13px;
+    position: relative;
+    border: none;
+    padding: 6px 20px;
+    border-radius: 15px;
+
+    font-size: 12px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: aliceblue;
+    color: #1e6b7b;
+    cursor: pointer;
+}
+
+.lastsign{
+    margin-left: 13px;
+    position: relative;
+    border: none;
+    padding: 20px 100px;
+    border-radius: 15px;
+
+    font-size: 18px;
+    font-family: "paybooc-Light", sans-serif;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+    background-color: aliceblue;
+    color: #1e6b7b;
+    cursor: pointer;
+}

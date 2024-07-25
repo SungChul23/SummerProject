@@ -1,0 +1,66 @@
+.book {
+  text-align: center;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.searchbtn {
+  padding: 10px 20px;
+  border: 1px solid white;
+  color: white;
+  font-size: 14px;
+  background-color: #028693;
+}
+
+.book-list ul {
+  list-style: none;
+  padding: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-item {
+  border: 1px solid #ccc;
+  color: black;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  flex: 0 0 22%; /* 3개씩 가로 배열 */
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.book-item img {
+  width: 130px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.page-button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-button.active {
+  background-color: #028693;
+  color: white;
+}
