@@ -145,7 +145,11 @@ function Head() {
             로그인
           </Link>
         </li>
-        <li>마이 페이지</li>
+        <li>
+          <Link to="/mypage" style={{ textDecoration: "none", color: "black" }}>
+            마이 페이지
+          </Link>
+        </li>
       </ul>
     </Header>
   );

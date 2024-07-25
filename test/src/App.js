@@ -8,7 +8,9 @@ import Board from "./board";
 
 import Write from "./write";
 import Signin from "./Signin";
+
 import Book from "./book";
+import Mypage from "./Mypage";
 
 function App() {
   return (
@@ -38,7 +40,8 @@ function App() {
             path="/login"
             element={
               <Layout>
-                <Login />
+                {" "}
+                <Login />{" "}
               </Layout>
             }
           />
@@ -46,7 +49,17 @@ function App() {
             path="/signin"
             element={
               <Layout>
-                <Signin />
+                {" "}
+                <Signin />{" "}
+              </Layout>
+            }
+          />
+          <Route
+            path="/mypage"
+            element={
+              <Layout>
+                {" "}
+                <Mypage />{" "}
               </Layout>
             }
           />
