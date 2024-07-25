@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-    //##alter TABLE users AUTO_INCREMENT = 1 - > sql 쿼리문(id값 1부터 다시 시작)
+    //alter TABLE users AUTO_INCREMENT = 1 - > sql 쿼리문(id값 1부터 다시 시작)
 
     @Id // 기본키
     @GeneratedValue(strategy = GenerationType.IDENTITY) //자동으로 키 생성
