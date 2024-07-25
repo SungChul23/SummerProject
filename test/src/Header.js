@@ -131,7 +131,11 @@ function Head() {
           </Link>
         </li>
 
-        <li>책정보</li>
+        <li>
+          <Link to="/book" style={{ textDecoration: "none", color: "black" }}>
+            책 정보
+          </Link>
+        </li>
       </ul>
 
       {/* User 메뉴 리스트 */}

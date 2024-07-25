@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import Login from "./Login";
@@ -8,6 +8,7 @@ import Board from "./board";
 
 import Write from "./write";
 import Signin from "./Signin";
+import Book from "./book";
 
 function App() {
   return (
@@ -46,6 +47,14 @@ function App() {
             element={
               <Layout>
                 <Signin />
+              </Layout>
+            }
+          />
+          <Route
+            path="/book"
+            element={
+              <Layout>
+                <Book />
               </Layout>
             }
           />
