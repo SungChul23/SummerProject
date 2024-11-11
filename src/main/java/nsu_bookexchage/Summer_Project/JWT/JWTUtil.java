@@ -13,7 +13,7 @@ public class JWTUtil {
     private SecretKey secretKey;
 
     public JWTUtil(@Value("${spring.jwt.secret}") String secret) {
-        // HS256 알고리즘을 명시적으로 설정합니다.
+        // HS256 알고리즘을 명시적으로 설정 ㄱ
         secretKey = new SecretKeySpec(secret.getBytes(StandardCharsets.UTF_8), "HmacSHA256");
 
     }
@@ -37,7 +37,7 @@ public class JWTUtil {
                 .before(new Date());
     }
 
-    // 토큰 생성
+
 // 토큰 생성
     public String createJwt(String email, String username, String nickname, String role, String expiredMsString) {
         long expiredMs = Long.parseLong(expiredMsString); // 문자열을 long으로 변환

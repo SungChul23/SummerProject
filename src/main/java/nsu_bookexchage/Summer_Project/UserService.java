@@ -1,21 +1,17 @@
-//비즈니스 로직 구현 + DB와의 상호작용
 package nsu_bookexchage.Summer_Project;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-
-
 @Service
 public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
-
-
 
     public void registerUser(UserDto userDto) {
         // 비밀번호 암호화
@@ -30,9 +26,8 @@ public class UserService {
         user.setRole("user");
 
         userRepository.save(user); // DB에 저장
-
     }
-    //userId를 사용하여 DB에서 사용자 찾기
+
     public User findUserByEmail(String email) {
         return userRepository.findByEmail(email); // 이메일로 사용자 조회
     }
@@ -40,5 +35,4 @@ public class UserService {
     public boolean isNicknameDuplicate(String nickname) {
         return userRepository.existsByNickname(nickname);
     }
-
 }
